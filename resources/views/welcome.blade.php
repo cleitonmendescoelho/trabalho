@@ -25,6 +25,24 @@
         </form>
         <section class="lista">
             <h3>Tabela de registros</h3>
+            <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Data de Criação</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($produtos as $produto)
+            <tr>
+                <td>{{ $produto->nome }}</td>
+                <td>{{ $produto->category }}</td>
+                <td>{{ $produto->created_at->format('d/m/Y H:i') }}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
         </section>
     </div>
     </div>

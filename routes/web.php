@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Models\produto;
 
 Route::get('/', function () {
-    return view('welcome');
+    $produtos = produto::all();
+    return view('welcome', ['produtos' => $produtos]);
 });
 
 Route::post('/cadastro_prod',function (Request $dados) {
