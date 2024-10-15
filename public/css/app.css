@@ -1,0 +1,60 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.conteiner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px;
+}
+h1{
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+form{
+    display:flex;
+    flex-direction: column;
+}
+input{
+    width: 500px;
+    height: 35px;
+    margin: 10px;
+    border: solid 2px black;
+    border-radius: 5px;
+}
+select{
+    position:relative;
+    left: 10px;
+    width: 508px;
+    height: 37px;
+    border:solid 2px black;
+    border-radius: 5px;
+}
+
+button{
+    margin: 5px;
+    position: relative;
+    left: 410px;
+    width: 100px;
+    height: 35px;
+    border: solid 2px black;
+    background-color: green;
+
+}
+button:hover{
+    color: white;
+}
+.lista{
+    margin: 30px;
+    width: 500px;
+    height:500px;
+    background-color: rgba(105, 105, 105, 0.164);
+    border-radius: 5px;
+
+}
+.lista h3{
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+
+}
