@@ -1,0 +1,154 @@
+<!-- Text input-->
+<div class="form-group col-md-4">
+    <label class="texto control-label" for="diretriz_urbanistica">Diretriz Urbanística:</label>
+    <div class="col-md-12 input-group">
+        <input id="id_diretriz_urbanistica" name="id_diretriz_urbanistica" type="text"
+            placeholder="Diretriz Urbanística" class="form-control input-md">
+        <button type="button" id ="id_diretriz_urbanistica" class="btn btn-outline-secondary"
+            onclick="adicionarDiretrizUrbanistica()">Adicionar</button> <!-- Evento Onlick que adiciona os elementos -->
+    </div>
+
+    {{-- Estrutura da lista Diretriz Urbanística --}} <!-- Estrutura que puxa os dados adicionados entre o banco de dados e a tela após serem salvos -->
+    <div class="m-2">
+        <ul class="list-group " id='lista-diretriz_urbanistica'>
+            @foreach ($dadosParcelamento->diretriz_urbanistica as $diretrizUrbanistica) <!--  percorre uma coleção de dados e executa o bloco de código dentro de cada iteração. -->
+            <!-- 
+                 * as $diretrizUrbanistica representa cada itém da lista que o foreach está percorrendo
+                 * $dadosParcelamento->diretriz_urbanistica -
+            -->
+
+                <li class="list-group-item"
+                    id="diretrizUrbanistica-{{ $diretrizUrbanistica->id_diretriz_urbanistica }}"> <!-- relaciona cada item com o seu ID-->
+                    <div class="d-flex justify-content-between">
+                        <span class="text-diretriz_urbanistica">
+                            {{ $diretrizUrbanistica->descricao }} <!--Traz os ítens do Banco-->
+                        </span>
+                        <div>
+                            <!--Botões que edita e deleta cada Diretriz-->
+                            <button type="button" class="btn btn-outline-success" data-toggle="modal"
+                                onclick="preencherEditDiretrizUrbanistica(`{{ $diretrizUrbanistica->descricao }}`, `{{ $diretrizUrbanistica->id_diretriz_urbanistica }}`)"
+                                data-target="#modalDiretrizUrbanistica">
+                                <i class="fas fa-edit"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-outline-danger"
+                                onclick="deleteDiretrizUrbanistica({{ $diretrizUrbanistica->id_diretriz_urbanistica }})"> <!--Função referente ao JS de deleteDiretrizUrbanistica -->
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </li>
+            @endforeach
+        </ul>
+
+    </div>
+
+    <input id="diretrizUrbanisticaArray" name="diretrizUrbanisticaArray" type="text" hidden>
+
+</div>
+
+
+<script>
+
+let diretrizUrbanisticaArray = []; // Variável global para armazenar as diretrizes urbanísticas
+
+        function adicionarDiretrizUrbanistica() {
+            let descricao = document.getElementById("id_diretriz_urbanistica").value;
+
+            if (descricao != "") {
+
+                count++; // Incrementa o contador para cada item adicionado// Incrementa o contador com base no tamanho do array
+
+                // Adiciona o item à lista HTML
+                $("#lista-diretriz_urbanistica").append(
+                    `<li class="list-group-item display: flex" id='dados-diretriz-urbanistica-${count}'>
+                <div class="d-flex justify-content-between">
+                    <input class='item-diretrizUrbanistica' hidden value="${descricao}">
+                    <span class="text-diretriz-urbanistica">${descricao}</span>
+                    <button type="button" class="btn btn-outline-danger remover-diretriz-urbanistica" onclick="removerDiretriz(${count})">
+                         <i class="fas fa-trash"></i>
+                    </button>
+                 </div>
+            </li> `
+                );
+
+                // Adiciona um novo objeto com a diretriz ao array diretrizUrbanisticaArray
+                diretrizUrbanisticaArray.push({
+                    id: count,
+                    descricao: descricao
+                });
+
+                // Limpa o campo de entrada
+                $("#id_diretriz_urbanistica").val("");
+
+                // Atualiza o valor do campo #diretrizUrbanisticaArray com o array JSON
+                $("#diretrizUrbanisticaArray").val(JSON.stringify(diretrizUrbanisticaArray));
+            }
+        }
+
+        function removerDiretriz(count) {
+            $('#dados-diretriz-urbanistica-' + count).remove();
+
+            // Atualiza o array após a remoção
+            diretrizUrbanisticaArray = diretrizUrbanisticaArray.filter(item => item.id !== count);
+
+            // Atualiza o valor do campo #diretrizUrbanisticaArray com o array JSON
+            $("#diretrizUrbanisticaArray").val(JSON.stringify(diretrizUrbanisticaArray));
+        }
+
+
+        function preencherEditDiretrizUrbanistica(descricao, id_diretriz_urbanistica) {
+            $("#descricao_modal").val(descricao);
+            $("#id_diretriz_urbanistica_modal").val(id_diretriz_urbanistica);
+        }
+
+        // Aqui
+        function deleteDiretrizUrbanistica(id_diretriz_urbanistica) {
+            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+            swal.fire({
+                title: 'Você deseja mesmo excluir essa Diretriz Urbanistica?',
+                text: "Essa ação é irreversível",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Deletar',
+                cancelButtonText: 'Cancelar',
+                cancelButtonColor: '#1324854d',
+                confirmButtonColor: '#ff1744',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: 'DELETE',
+                        url: `/deletar-diretriz-urbanistica/${id_diretriz_urbanistica}`,
+                        headers: {
+                            'X-CSRF-TOKEN': csrfToken // Set CSRF token in headers
+                        },
+                        success: function(response) {
+                            if (response.status == 200) {
+                                $('#diretrizUrbanistica-' + response.id_diretrizUrbanistica)
+                                    .remove(); // Correct selector syntax
+
+                                swal.fire(
+                                    'Deletado com sucesso!',
+                                    '',
+                                    'success'
+                                );
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            // Handle errors here
+                            console.error('AJAX Error:', error);
+                        }
+                    });
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                    swal.fire(
+                        'Cancelado',
+                        'Nenhuma ação foi realizada!',
+                        'error'
+                    );
+                }
+            });
+        }
+    </script>
