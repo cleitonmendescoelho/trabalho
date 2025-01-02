@@ -5,16 +5,17 @@
         <input id="id_diretriz_urbanistica" name="id_diretriz_urbanistica" type="text"
             placeholder="Diretriz Urbanística" class="form-control input-md">
         <button type="button" id ="id_diretriz_urbanistica" class="btn btn-outline-secondary"
-            onclick="adicionarDiretrizUrbanistica()">Adicionar</button> <!-- Evento Onlick que adiciona os elementos -->
+            onclick="adicionarDiretrizUrbanistica()">Adicionar</button> <!-- Evento JS Onlick que interage com o botão adicionando os elementos. Corresponde a uma função JS -->
     </div>
 
-    {{-- Estrutura da lista Diretriz Urbanística --}} <!-- Estrutura que puxa os dados adicionados entre o banco de dados e a tela após serem salvos -->
+    {{-- Estrutura da lista Diretriz Urbanística --}} <!-- Estrutura que traz os dados do banco de dados, armaze valores e interage editando e excluindo cada itém no banco -->
     <div class="m-2">
         <ul class="list-group " id='lista-diretriz_urbanistica'>
             @foreach ($dadosParcelamento->diretriz_urbanistica as $diretrizUrbanistica) <!--  percorre uma coleção de dados e executa o bloco de código dentro de cada iteração. -->
             <!-- 
-                 * as $diretrizUrbanistica representa cada itém da lista que o foreach está percorrendo
-                 * $dadosParcelamento->diretriz_urbanistica -
+                 * $dadosParcelamento->diretriz_urbanistica - É onde o @foreach percorre para trazer os dados
+                 * as $diretrizUrbanistica - representa cada itém da lista que o foreach está percorrendo, ou seja, cada ítem é representado/referenciado por $diretrizUrbanistica
+                 
             -->
 
                 <li class="list-group-item"
