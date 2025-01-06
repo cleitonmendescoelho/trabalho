@@ -6,16 +6,16 @@ tela de criar parcelamentos e editar parcelamentos de modo que em editar permita
 * DiretrizUrbanisticaService - Funções e parâmetros
 * DiretrizUrbanisticaRepository - Funções e parâmetros/banco de dados
 * DiretrizUrbanisticaController - função Editar/deletar
-* form-create-parcelamento.blade - Campo input, estrutura da lista e função JS
-* form-parcelamento.blade - Campo input, Estrutura da lista, Modal, função JS (input/modal)
 * ParcelamentoService - criarParcelamento, Editar, buscarDadosParcelamentoPorId
 * ParcelamentoController - buscaParcelamento
 * arineService - detalhes arine
 * arisService - detalhes aris
+* form-create-parcelamento.blade - Campo input, estrutura da lista e função JS
+* form-parcelamento.blade - Campo input, Estrutura da lista, Modal, função JS (input/modal)
 
 1.Criar a tabela tb_diretriz_Urbanistica com os campos (id_parcelamento, id_diretriz_urbanistica, descricao)
 2.Criar um arquivo service e criar as funções das operações (criar,editar,excluir,...)
-3.Criar um arquivo repository e criar as funções usando DBQuery
+3.Criar um arquivo repository e criar as funções das operações de interação com o banco de dados usando DBQuery referenciando os parâmetros da service.
 4.Criar um arquivo Controller com as funções de editar e excluir
 5.Criar os parametros das funções em parcelamentoService (criarParcelamento, Editar, buscarDadosParcelamentoPorId)
 6.Criar as variaveis em ParcelamentoController (buscaParcelamento)
@@ -29,10 +29,11 @@ tela de criar parcelamentos e editar parcelamentos de modo que em editar permita
 
 Variáveis definidas em Diretriz Urbanistica
 
-* $descrição - ParcelamentoService
+* $descricao - ParcelamentoService
+* diretrizUrbanistica - ParcelamentoController
 * $listaDiretrizUrbanistica - ParcelamentoService
 * $dadosParcelamento->diretriz_urbanistica - ParcelamentoService
-* Diretriz Urbanistica - ParcelamentoController
+
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
