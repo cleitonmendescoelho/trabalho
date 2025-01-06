@@ -87,7 +87,7 @@ class ParcelamentoService
             $habitacaoUnifamiliar,
             $habitacaoColetiva,
             $epcEpu,
-            $comercialServicosIndustrial,
+            $comercialServicosIndustrial, //Estruturas de validação de criação de Inputs simples
             $institucionalColetivo,
             $usoMisto,
             $totalUnidadesImobiliarias,
@@ -114,7 +114,7 @@ class ParcelamentoService
 
         ProcessoRepository::cadastrarProcesso($idParcelamento, $processo);
 
-        $arrayNormativos = json_decode($dadosParcelamento['normativoArray'], true);
+        $arrayNormativos = json_decode($dadosParcelamento['normativoArray'], true); //Estrutura para listas
         if (!empty($arrayNormativos)) {
             foreach ($arrayNormativos as $descricao) {
                 NormativoService::criarNormativo($idParcelamento, $descricao);
