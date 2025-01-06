@@ -30,7 +30,7 @@ tela de criar parcelamentos e editar parcelamentos de modo que em editar permita
 Variáveis definidas em Diretriz Urbanistica
 
 * $descricao - ParcelamentoService
-* diretrizUrbanistica - ParcelamentoController
+* $diretrizUrbanistica - ParcelamentoController
 * $listaDiretrizUrbanistica - ParcelamentoService
 * $dadosParcelamento->diretriz_urbanistica - ParcelamentoService
 
