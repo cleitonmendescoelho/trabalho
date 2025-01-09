@@ -1,14 +1,35 @@
-Descrição: Criar novos campos (ano atuação processo, número processo ambiental,número proceso ambiental,numero do processo topografia)
-na view (form-parcelamento) e inserir o mesmo campos no modal (detalhes-arine/detalhes-aris).
+Descrição: Criar novos campos (ano atuação processo,número proceso ambiental,numero do processo topografia,Número do Processo Licenciamento 
+Ambiental) na view (form-parcelamento) e inserir o mesmo campos no modal (detalhes-arine/detalhes-aris).
 
-1. Criação das colunas na tabela Parcelamento
-2. Criação dos inputs na view
-3. criar a variável de cadastro entre o formulário e o banco de dados em parcelamentoService (cadastrarParcelamento)
-4. Inserir a variável de cadastro entre o formulário e o banco de dados em parcelamentoRepository (cadastrarParcelamento)
-5. Fazer os passos 3 e 4 para editar parcelamento.
-6. inserir os campos no modal (detalhes-arine/aris)
-7. Puxar os dados inseridos no campo
-
-* form-parcelamento
+* form-create-parcelamento.blade.php
+* form-parcelamento.blade.php
+* Parcelamento service (cadastrar, Editar)
+* Parcelamento Repository (buscarParcelamentosPorArine, buscarParcelamentosPorAris, cadastrarParcelamento, editarParcelamento, buscarDadosParcelamentoPorId)
 * detalhes-arine/detalhes-aris
-* cadastrarParcelamento
+
+1. Criação das colunas (ano atuação processo, número processo ambiental,número proceso ambiental,numero do processo topografia) na tabela 
+Parcelamento
+2. Criação dos inputs na view form-create-parcelamento.blade.php e form-parcelamento.blade.php
+3. Criar a variável de cadastro entre o formulário e o banco de dados em parcelamentoService (cadastrar Parcelamento e Editar Parcelamento)
+4. Inserir a variável de cadastro entre o formulário e o banco de dados em parcelamentoRepository (buscarParcelamentosPorArine, buscarParcelamentosPorAris, cadastrarParcelamento, editarParcelamento, buscarDadosParcelamentoPorId)
+5. inserir os campos no modal (detalhes-arine/aris)
+6. Puxar os dados inseridos no campo
+
+Ano Atuação Processo
+
+
+
+
+número processo ambiental
+
+
+
+
+
+
+numero do processo topografia
+
+
+
+
+Número do Processo Licenciamento Ambiental

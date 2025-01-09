@@ -13,49 +13,9 @@ use App\Http\Models\Repository\UrbRepository;
 use App\Helpers\Helper;
 
 class ArisService {
-    public static function listarAris()
-    {
-        $listaAris = ArisRepository::listarAris();
-
-        return $listaAris;
-    }
-
-    public static function buscarArisPorDescricao($nomeAris)
-    {
-        $arisExiste = ArisRepository::buscarArisPorDescricao($nomeAris);
-
-        return $arisExiste;
-    }
-
-    public static function cadastrarParcelamentoAris($dadosParcelamento)
-    {
-
-        $idAris = SELF::_verificaAris($dadosParcelamento['nome_ar'], $dadosParcelamento['check_pui'], $dadosParcelamento['area_ar'], $dadosParcelamento['check_nucleo_urbano']);
-        $chaveValorAris = ['area'=> 'aris','valor' => $idAris];
-
-        $cadastroParcelamento = ParcelamentoService::cadastrarParcelamento($chaveValorAris, $dadosParcelamento);
-
-        return $idAris;
-    }
-
-    protected static function _verificaAris($nomeAris, $checkPui, $areaAr, $checkNucleoUrbano)
-    {
-
-        $idAris = ArisRepository::verificarExistenciaAris($nomeAris);
-
-        if(empty($idAris[0]->id_aris))
-        {
-            LogsService::cadastroAris($nomeAris);
-
-            return ArisRepository::cadastrarAris($nomeAris, $checkPui, $areaAr, $checkNucleoUrbano);
-        }else{
-            return $idAris[0]->id_aris;
-        }
-    }
 
     public static function detalhesAris($idAris)
     {
-
         $aris = ArisRepository::buscarArisPorId($idAris);
 
         $dadosParcelamentos = ParcelamentoRepository::buscarParcelamentosPorAris($idAris);
@@ -103,35 +63,5 @@ class ArisService {
         }
 
         return $dadosAris;
-    }
-
-    protected static function _tratarMsgCriacaoAlteracao($dtCriacao, $dtUltimaAlteracao, $responsavelUltimaAlteracao)
-    {
-        $dtCriacao = Helper::converterDataInglesPortugues($dtCriacao);
-        $dtUltimaAlteracao = Helper::converterDataInglesPortugues($dtUltimaAlteracao);
-        if(isset($dtUltimaAlteracao)){
-            $msgCriacaoAlteracao = "Parcelamento alterado por " . $responsavelUltimaAlteracao . " em " . $dtUltimaAlteracao;
-        }
-       else{
-           $msgCriacaoAlteracao = "Parcelamento cadastrado por " . $responsavelUltimaAlteracao . " em " . $dtCriacao;
-       }
-
-       return $msgCriacaoAlteracao;
-    }
-
-    public static function desativarAris($idAris)
-    {
-        ArisRepository::desativarAris($idAris);
-    }
-
-    public static function editarAris($idAris, $nomeAris, $areaAris, $puiAris)
-    {
-        $arisExiste = ArisRepository::verificarExistenciaAris($nomeAris);
-        if(empty($arisExiste[0]->id_aris) || $arisExiste[0]->id_aris == $idAris){
-            ArisRepository::editarAris($idAris, $nomeAris, $areaAris, $puiAris);
-            echo 'true';
-        }else{
-           echo 'false';
-        }
     }
 }

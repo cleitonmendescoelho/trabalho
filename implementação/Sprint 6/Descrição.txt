@@ -3,13 +3,15 @@ Sprint 6
 Descrição: criar um campo chamado Diretriz Urbanistica que permita adicionar varios decretos e portarias de modo que, sejam listados na 
 tela de criar parcelamentos e editar parcelamentos de modo que em editar permita edição e exclusão desses parcelamentos adicionados.
 
-* DiretrizUrbanisticaService - Funções e parâmetros
-* DiretrizUrbanisticaRepository - Funções e parâmetros/banco de dados
+* DiretrizUrbanisticaService - Funções de interação do campo e parâmetros
+* DiretrizUrbanisticaRepository - Funções e parâmetros definidos em DiretrizUrbanisticaService utilizando DBQuery (Banco de Dados)
 * DiretrizUrbanisticaController - função Editar/deletar
-* ParcelamentoService - criarParcelamento, Editar, buscarDadosParcelamentoPorId
+* ParcelamentoService - criarParcelamento, EditarParcelamento, buscarDadosParcelamentoPorId
 * ParcelamentoController - buscaParcelamento
 * arineService - detalhes arine
 * arisService - detalhes aris
+* dados-parcelamento
+* mapaRegularizacao - Ajax
 * form-create-parcelamento.blade - Campo input, estrutura da lista e função JS
 * form-parcelamento.blade - Campo input, Estrutura da lista, Modal, função JS (input/modal)
 
@@ -25,6 +27,9 @@ tela de criar parcelamentos e editar parcelamentos de modo que em editar permita
 9.1  Criar a função de adicionar, remover, editar e deletar
 9.2 Criar a modal em form-Parcelamento
 10 - Definir as rotas de editar, deletar
+11 - dados-parcelamento - Criar o campo de exibição na tela de regularização por região administrativa
+12 - Criar o ajax em mapaRegularizacao para renderização da página
+
 
 
 Variáveis definidas em Diretriz Urbanistica
