@@ -1,12 +1,6 @@
 Descrição: Criar novos campos (ano atuação processo,número proceso ambiental,numero do processo topografia,Número do Processo Licenciamento 
 Ambiental) na view (form-parcelamento) e inserir o mesmo campos no modal (detalhes-arine/detalhes-aris).
 
-* form-create-parcelamento.blade.php
-* form-parcelamento.blade.php
-* Parcelamento service (cadastrar, Editar)
-* Parcelamento Repository (buscarParcelamentosPorArine, buscarParcelamentosPorAris, cadastrarParcelamento, editarParcelamento, buscarDadosParcelamentoPorId)
-* detalhes-arine/detalhes-aris
-
 1. Criação das colunas (ano atuação processo, número processo ambiental,número proceso ambiental,numero do processo topografia) na tabela 
 Parcelamento
 2. Criação dos inputs na view form-create-parcelamento.blade.php e form-parcelamento.blade.php
@@ -17,11 +11,24 @@ Parcelamento
 
 Ano Atuação Processo
 
+* ParcelamentoService (Cadastrar e editar)
+* ParcelamentoRepository (buscarParcelamentosPorArine, buscarParcelamentosPorAris, cadastrarParcelamento, Editar, buscarDadosParcelamentoPorId)
+* detalhes-arine
+* detalhes-aris
+* form-create-parcelamento.blade.php
+* form-parcelamento.blade.php
+
 
 
 
 número processo ambiental
 
+* ParcelamentoService (Cadastrar e editar)
+* ParcelamentoRepository (buscarParcelamentosPorArine, buscarParcelamentosPorAris, cadastrarParcelamento, Editar, buscarDadosParcelamentoPorId)
+* detalhes-arine
+* detalhes-aris
+* form-create-parcelamento.blade.php
+* form-parcelamento.blade.php
 
 
 
@@ -29,7 +36,20 @@ número processo ambiental
 
 numero do processo topografia
 
+* ParcelamentoService (Cadastrar e editar)
+* ParcelamentoRepository (buscarParcelamentosPorArine, buscarParcelamentosPorAris, cadastrarParcelamento, Editar, buscarDadosParcelamentoPorId)
+* detalhes-arine
+* detalhes-aris
+* form-create-parcelamento.blade.php
+* form-parcelamento.blade.php
 
 
 
 Número do Processo Licenciamento Ambiental
+
+* ParcelamentoService (Cadastrar e editar)
+* ParcelamentoRepository (buscarParcelamentosPorArine, buscarParcelamentosPorAris, cadastrarParcelamento, Editar, buscarDadosParcelamentoPorId)
+* detalhes-arine
+* detalhes-aris
+* form-create-parcelamento.blade.php
+* form-parcelamento.blade.php
