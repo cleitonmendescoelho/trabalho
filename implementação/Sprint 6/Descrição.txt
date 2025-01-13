@@ -10,7 +10,7 @@ tela de criar parcelamentos e editar parcelamentos de modo que em editar permita
 * ParcelamentoController - buscaParcelamento
 * arineService - detalhes arine
 * arisService - detalhes aris
-* dados-parcelamento
+* dados-parcelamento - Exibição em região administrativa
 * mapaRegularizacao - Ajax
 * form-create-parcelamento.blade - Campo input, estrutura da lista e função JS
 * form-parcelamento.blade - Campo input, Estrutura da lista, Modal, função JS (input/modal)
