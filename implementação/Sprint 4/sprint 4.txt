@@ -1,5 +1,5 @@
 Descrição: criar um campo chamado Decreto ou Portaria que permita adicionar varios decretos e portarias e suas respectivas datas de modo que,
-sejam listados na tela de criar parcelamentos e editar parcelamentos. Na tela de é necessário editar e excluir os dados adicionados.
+sejam listados na tela de criar parcelamentos e editar parcelamentos. Na tela de editar, é necessário editar e excluir os dados adicionados.
 
 Arquivos
 
