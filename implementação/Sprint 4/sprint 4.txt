@@ -5,24 +5,24 @@ Arquivos
 
 * DecretoPortariaService - Funções e parâmetros
 * DecretoPortariaRepository - Funções e parâmetros/banco de dados
-* DecretoPortariaController - função Editar/deletar
-* form-create-parcelamento.blade - Campo input, estrutura da lista e função JS
+* DecretoPortariaController - Processamento da requisição - função Editar/deletar
+* form-create-parcelamento.blade - Campo input, função JS
 * form-parcelamento.blade - Campo input, Estrutura da lista, Modal, função JS (input/modal)
 * ParcelamentoService - criarParcelamento, Editar, buscarDadosParcelamentoPorId
 * ParcelamentoController - buscaParcelamento
 * arineService - detalhes arine
 * arisService - detalhes aris
 
-1.Criar o campo no Front "Decreto ou portaria" em form-create-parcelamento
-1.1- Criar a função de adicionar e remover do campo
-2. Criar o campo no Front "Decreto ou portaria" em form-parcelamento
-2.1 Criar a função de adicionar, remover, editar e deletar
-2.2 Criar a modal de editar em form-Parcelamento
-3.Criar a tabela tb_decreto_portaria com os campos (id_parcelamento, numero_publicacao e id_parcelamento(FK-Parcelamento))
-4.Criar um arquivo service e criar as funções das operações (criar,editar,excluir,...)
-5.Criar um arquivo repository e criar as funções usando DBQuery
-6.Criar um arquivo Controller com as funções de editar e excluir
-7.Criar os parametros das funções em parcelamentoService
-8.Criar as variaveis em ParcelamentoController
-9.Definir o Back-End no campo Decreto ou Portaria em form-create-parcelamento e form-parcelamento
-7.Definir as rotas de editar, deletar e modal
+1.Criar o campo "Decreto ou portaria" no Front em form-parcelamento
+1.1 Criar o campo "Decreto ou portaria" no Front em form-create-parcelamento
+2.Criar a função de adicionar e remover do campo form-parcelamento
+2.1 Criar a função de adicionar, remover, editar e deletar em form-parcelamento 
+3.Criar a modal de editar em form-Parcelamento
+4.Criar a tabela tb_decreto_portaria com os campos (id_parcelamento, numero_publicacao e id_parcelamento(FK-Parcelamento))
+5.Criar um arquivo service e criar as funções das operações (criar,editar,excluir,...)
+6.Criar um arquivo repository e criar as funções usando DBQuery
+7.Criar um arquivo DecretoPortariaController que processa a funções de editar e excluir
+8.Criar as variaveis das funções (criarParcelamento, Editar, buscarDadosParcelamentoPorId) em parcelamentoService
+9.Criar as variáveis e arrays ParcelamentoController
+10.Definir o Back-End no campo Decreto ou Portaria em form-parcelamento (trazer a lista do banco de dados)
+11.Definir as rotas de editar, deletar e modal
