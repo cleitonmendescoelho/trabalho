@@ -1,5 +1,5 @@
 Descrição: criar um campo chamado Decreto ou Portaria que permita adicionar varios decretos e portarias e suas respectivas datas de modo que,
-sejam listados na tela de criar parcelamentos e editar parcelamentos. Na tela de é necessário editar e excluir os dados adicionados.
+sejam listados na tela de criar parcelamentos e editar parcelamentos. Na tela de editar, é necessário editar e excluir os dados adicionados.
 
 Arquivos
 
@@ -13,6 +13,7 @@ Arquivos
 * arineService - detalhes arine
 * arisService - detalhes aris
 
+<<<<<<< HEAD
 1.Criar o campo "Decreto ou portaria" no Front em form-parcelamento
 1.1 Criar o campo "Decreto ou portaria" no Front em form-create-parcelamento
 2.Criar a função de adicionar e remover do campo form-parcelamento
@@ -26,3 +27,18 @@ Arquivos
 9.Criar as variáveis e arrays ParcelamentoController
 10.Definir o Back-End no campo Decreto ou Portaria em form-parcelamento (trazer a lista do banco de dados)
 11.Definir as rotas de editar, deletar e modal
+=======
+1.Criar o campo no Front "Decreto ou portaria" em form-create-parcelamento
+1.1- Criar a função de adicionar e remover do campo
+2. Criar o campo no Front "Decreto ou portaria" em form-parcelamento
+2.1 Criar a função de adicionar, remover, editar e deletar
+2.2 Criar a modal de editar em form-Parcelamento
+3.Criar a tabela tb_decreto_portaria com os campos (id_parcelamento, numero_publicacao e id_parcelamento(FK-Parcelamento))
+4.Criar um arquivo service e criar as funções das operações (criar,editar,excluir,...)
+5.Criar um arquivo repository e criar as funções usando DBQuery
+6.Criar um arquivo Controller com as funções de editar e excluir
+7.Criar os parametros das funções em parcelamentoService
+8.Criar as variaveis em ParcelamentoController
+9.Definir o Back-End no campo Decreto ou Portaria em form-create-parcelamento e form-parcelamento
+7.Definir as rotas de editar, deletar e modal
+>>>>>>> 644dedaa4566965589ac594852d5b310e7566f38
