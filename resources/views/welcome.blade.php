@@ -51,7 +51,7 @@
                             <form action="/produto/{{ $produto->id }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit">Excluir</button>
+                                <button type="submit" style="background-color:red;">Excluir</button>
                             </form>
                         </td> 
                           <!-- Edit -->
