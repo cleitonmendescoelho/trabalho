@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{asset('css/app.css')}}?v={{ time()}}">
     <title>Document</title>
-
 </head>
 <body>
     <div class="conteiner">
@@ -26,24 +23,41 @@
         <section class="lista">
             <h3>Tabela de registros</h3>
             <table>
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Categoria</th>
-                <th>Data de Criação</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($produtos as $produto)
-            <tr>
-                <td>{{ $produto->nome }}</td>
-                <td>{{ $produto->category }}</td>
-                <td>{{ $produto->created_at->format('d/m/Y H:i') }}</td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-        </section>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Categoria</th>
+                        <th>Data de Criação</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <!-- Estrutura 1 -->
+                    <!-- @foreach($produtos as $produto)
+                    <tr>
+                        <td>{{ $produto->nome }}</td>
+                        <td>{{ $produto->category }}</td>
+                        <td>{{ $produto->created_at->format('d/m/Y H:i') }}</td>
+                    </tr>
+                    @endforeach -->
+
+                    <!-- Estrutura 2 -->
+                     @foreach($produtos as $produto)
+                    <tr>
+                        <td>{{ $produto->nome }}</td>
+                        <td>{{ $produto->category }}</td>
+                        <td>{{ $produto->created_at->format('d/m/Y H:i') }}</td>
+                        <td>
+                            <form action="/produto/{{ $produto->id }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit">Excluir</button>
+                            </form>
+                        </td>   
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
     </div>
     </div>
 </body>
