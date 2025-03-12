@@ -5,15 +5,15 @@ use Illuminate\Support\Facades\Route;
 use App\Models\produto;
 
 // Rota padrão
-Route::get('/', function(){
+Route::get('/', function () {
     return view('welcome');
 });
 
 // Rota que cria os dados no BD
-Route::post('/cadastro_prod',function (Request $dados) {
+Route::post('/cadastro_prod', function (Request $dados) {
     produto::create([
-        'nome' => $dados-> nome,
-        'category' => $dados-> category
+        'nome' => $dados->nome,
+        'category' => $dados->category
     ]);
 
     echo "Cadastro realizado!";
@@ -34,4 +34,3 @@ Route::delete('/produto/{id}', function ($id) {
 });
 
 // Editar
-

@@ -32,7 +32,7 @@
                 </thead>
                 <tbody>
 
-                    <!-- Estrutura 1 -->
+                    <!-- Estrutura 1 - Listando os dados -->
                     <!-- @foreach($produtos as $produto)
                     <tr>
                         <td>{{ $produto->nome }}</td>
@@ -41,7 +41,7 @@
                     </tr>
                     @endforeach -->
 
-                    <!-- Estrutura 2 -->
+                    <!-- Estrutura 2 Listando os dados e adicionando o Update e Delete-->
                      @foreach($produtos as $produto)
                     <tr>
                         <td>{{ $produto->nome }}</td>
