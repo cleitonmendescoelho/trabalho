@@ -28,20 +28,10 @@
                         <th>Nome</th>
                         <th>Categoria</th>
                         <th>Data de Criação</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-
-                    <!-- Estrutura 1 -->
-                    <!-- @foreach($produtos as $produto)
-                    <tr>
-                        <td>{{ $produto->nome }}</td>
-                        <td>{{ $produto->category }}</td>
-                        <td>{{ $produto->created_at->format('d/m/Y H:i') }}</td>
-                    </tr>
-                    @endforeach -->
-
-                    <!-- Estrutura 2 -->
                      @foreach($produtos as $produto)
                     <tr>
                         <td>{{ $produto->nome }}</td>
@@ -53,7 +43,7 @@
                                 @method('DELETE')
                                 <button type="submit" style="background-color:red;">Excluir</button>
                             </form>
-                        </td> 
+                        </td>
                           <!-- Edit -->
                            <td></td>
                     </tr>
