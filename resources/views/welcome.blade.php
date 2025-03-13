@@ -9,14 +9,13 @@
 <body>
     <div class="conteiner">
         <h1>Cadastro de produtos</h1>
-        <form action="/cadastro_prod" method="post">
-            @csrf
-            <input type="text" name="nome" placeholder="Nome">
-            <select name="category" id="category">
-                <option value="Utensilios">Utensilios</option>
-                <option value="Roupas">Roupas</option>
-                <option value="Calçados">Calçados</option>
-                <option value="Lar">Lar</option>
+        <form action="" method="t">
+            <input type="text" name="" placeholder="Nome">
+            <select name="" id="">
+                <option value="">Utensilios</option>
+                <option value="">Roupas</option>
+                <option value="">Calçados</option>
+                <option value="">Lar</option>
             </select>
             <button type="submit">Cadastrar</button>
         </form>
@@ -30,35 +29,7 @@
                         <th>Data de Criação</th>
                     </tr>
                 </thead>
-                <tbody>
-
-                    <!-- Estrutura 1 -->
-                    <!-- @foreach($produtos as $produto)
-                    <tr>
-                        <td>{{ $produto->nome }}</td>
-                        <td>{{ $produto->category }}</td>
-                        <td>{{ $produto->created_at->format('d/m/Y H:i') }}</td>
-                    </tr>
-                    @endforeach -->
-
-                    <!-- Estrutura 2 -->
-                     @foreach($produtos as $produto)
-                    <tr>
-                        <td>{{ $produto->nome }}</td>
-                        <td>{{ $produto->category }}</td>
-                        <td>{{ $produto->created_at->format('d/m/Y H:i') }}</td>
-                        <td>
-                            <form action="/produto/{{ $produto->id }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" style="background-color:red;">Excluir</button>
-                            </form>
-                        </td> 
-                          <!-- Edit -->
-                           <td></td>
-                    </tr>
-                    @endforeach
-                </tbody>
+                <tbody></tbody>
             </table>
     </div>
     </div>
