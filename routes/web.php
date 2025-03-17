@@ -16,7 +16,7 @@ Route::post('/cadastro_prod', function (Request $dados) {
         'category' => $dados->category
     ]);
 
-    echo "Cadastro realizado!";
+    return redirect('/');
 });
 
 // Rota que acessa a model e exibi os dados na lista
@@ -30,7 +30,7 @@ Route::delete('/produto/{id}', function ($id) {
     $produto = Produto::findOrFail($id);
     $produto->delete();
 
-    return redirect('/')->with('status', 'Produto excluído com sucesso!');
+    return redirect('/');
 });
 
 // Editar
