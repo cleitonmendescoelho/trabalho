@@ -9,13 +9,13 @@
 <body>
     <div class="conteiner">
         <h1>Cadastro de produtos</h1>
-        <form action="" method="t">
+        <form action="" method="">
             <input type="text" name="" placeholder="Nome">
             <select name="" id="">
-                <option value="">Utensilios</option>
-                <option value="">Roupas</option>
-                <option value="">Calçados</option>
-                <option value="">Lar</option>
+                <option value="Utensilios">Utensilios</option>
+                <option value="Roupas">Roupas</option>
+                <option value="Calçados">Calçados</option>
+                <option value="Lar">Lar</option>
             </select>
             <button type="submit">Cadastrar</button>
         </form>
