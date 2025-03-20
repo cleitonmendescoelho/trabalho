@@ -31,9 +31,6 @@
                     </tr>
                 </thead>
                 <tbody>
-
-                <h3>teste --amend</h3>
-
                     <!-- Estrutura 1 - Listando os dados -->
                     <!-- @foreach($produtos as $produto)
                     <tr>
