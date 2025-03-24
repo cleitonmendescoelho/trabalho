@@ -8,5 +8,3 @@ use App\Models\produto;
 Route::get('/',function(){
     return view('welcome');
 });
-
-//
