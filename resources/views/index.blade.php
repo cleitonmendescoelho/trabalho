@@ -1,49 +1,45 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <title>Document</title>
-
+    <link rel="stylesheet" href="{{ asset('css/app.css') }} ?v={{ time() }}">
+    <title>Cadastro de Produtos</title>
 </head>
+
 <body>
-    <div class="conteiner">
-        <h1>Cadastro de produtos</h1>
-        <form action="" method="">
-            <input type="text" name="" placeholder="Nome">
-            <select name="">
-                <option value="Utensilios">Utensilios</option>
+    <div class="container">
+        <h1>Cadastro de Produtos</h1>
+        <form action="" method="POST">
+            <input type="text" name="nome" placeholder="Nome" required>
+            <select name="categoria" required>
+                <option value="" disabled selected>Selecione a categoria</option>
+                <option value="Utensilios">Utensílios</option>
                 <option value="Roupas">Roupas</option>
                 <option value="Calçados">Calçados</option>
                 <option value="Lar">Lar</option>
             </select>
             <button type="submit">Cadastrar</button>
         </form>
+
         <section class="lista">
-            <h3>Tabela de registros</h3>
+            <h3>Tabela de Registros</h3>
             <table>
                 <thead>
                     <tr>
                         <th>Nome</th>
                         <th>Categoria</th>
                         <th>Data de Criação</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($produtos as $produto)
-                    <tr>
-                        <td>{{ $produto->nome }}</td>
-                        <td>{{ $produto->category }}</td>
-                        <td>{{ $produto->created_at->format('d/m/Y H:i') }}</td>
-                    </tr>
-                    @endforeach
+                    
                 </tbody>
             </table>
         </section>
     </div>
-    </div>
 </body>
+
 </html>
