@@ -9,14 +9,12 @@
     <title>Document</title>
 
 </head>
-
 <body>
     <div class="conteiner">
         <h1>Cadastro de produtos</h1>
-        <form action="/cadastro_prod" method="post">
-            @csrf
-            <input type="text" name="nome" placeholder="Nome">
-            <select name="category" id="category">
+        <form action="" method="">
+            <input type="text" name="" placeholder="Nome">
+            <select name="">
                 <option value="Utensilios">Utensilios</option>
                 <option value="Roupas">Roupas</option>
                 <option value="Calçados">Calçados</option>
@@ -48,5 +46,4 @@
     </div>
     </div>
 </body>
-
 </html>

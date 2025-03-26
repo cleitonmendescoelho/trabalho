@@ -2,9 +2,5 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\produto;
+use App\Models\Produto;
 
-
-Route::get('/',function(){
-    return view('welcome');
-});
