@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/app.css') }} ?v={{ time() }}">
     <title>Cadastro de Produtos</title>
 </head>
-
 <body>
     <div class="container">
         <h1>Cadastro de Produtos</h1>
-        <form action="" method="POST">
-            <input type="text" name="nome" placeholder="Nome" required>
-            <select name="categoria" required>
+        <form action="" method="">
+            <input type="text" name="" placeholder="Nome" required>
+            <select name="" required>
                 <option value="" disabled selected>Selecione a categoria</option>
                 <option value="Utensilios">Utensílios</option>
                 <option value="Roupas">Roupas</option>
@@ -22,7 +20,6 @@
             </select>
             <button type="submit">Cadastrar</button>
         </form>
-
         <section class="lista">
             <h3>Tabela de Registros</h3>
             <table>
@@ -35,7 +32,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
                 </tbody>
             </table>
         </section>
