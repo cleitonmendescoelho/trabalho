@@ -12,8 +12,8 @@
     <div class="container">
         <h1>Cadastro de Produtos</h1>
         <form action="" method="POST">
-            <input type="text" name="nome" placeholder="Nome" required>
-            <select name="categoria" required>
+            <input type="text" name="" placeholder="" required>
+            <select name="" required>
                 <option value="" disabled selected>Selecione a categoria</option>
                 <option value="Utensilios">Utensílios</option>
                 <option value="Roupas">Roupas</option>
