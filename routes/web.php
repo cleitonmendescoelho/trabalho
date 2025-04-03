@@ -2,8 +2,13 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\Produto;
+use App\Http\Controllers\ProdutoController;
 
-Route::Get('',function(){
-    return view('index');
-});
+// Route View
+Route::get('/', [ProdutoController::class, 'index']);
+
+// Route create
+Route::post('/cadastro_prod', [ProdutoController::class, 'store']);
+
+// Route Delete
+Route::delete('/produto/{id}', [ProdutoController::class, 'destroy']);

@@ -1,115 +1,169 @@
-* {
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f4f4f4;
+header h1{
+    text-align: center;
 }
 
-.container {
+/* Estilos gerais do main */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+main h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilos do formulário */
+.formulario {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 40px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
     max-width: 600px;
-}
-
-.container h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-/* Formulário */
-.container form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
     width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.container form input,
-.container form select {
-    height: 40px;
-    padding: 8px;
-    border: 2px solid black;
+/* Estilo dos grupos de campos do formulário */
+.form-group {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input,
+.form-group select {
+    width: 500px;
+    padding: 10px;
+    border: 2px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+    box-sizing: border-box;
 }
 
-.container form button {
-    width: 100%;
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Estilo do botão de envio */
+.btn-submit {
+    width: 200px;
     height: 45px;
-    border: none;
-    border-radius: 5px;
     background-color: green;
     color: white;
+    border: none;
+    border-radius: 25px;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 20px;
 }
 
-.container form button:hover {
+.btn-submit:hover {
     background-color: darkgreen;
 }
 
-/* Tabela */
+/* Estilos da lista de produtos */
 .lista {
-    margin-top: 30px;
-    width: 100%;
+    margin-top: 40px;
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 8px;
+    /* background-color: #f9f9f9; */
 }
 
-.lista h3 {
+.lista h2 {
+    font-size: 20px;
     text-align: center;
-    font-size: 18px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
+/* Estilo da tabela */
 .lista table {
     width: 100%;
     border-collapse: collapse;
-    background: white;
-}
-
-.lista table thead {
-    background-color: rgb(0, 195, 255);
-    color: white;
+    margin-top: 20px;
 }
 
 .lista table th,
 .lista table td {
-    padding: 10px;
+    padding: 12px;
+    border: 1px solid #ddd;
     text-align: left;
-    border-bottom: 1px solid #ddd;
 }
 
-/* Botões de ação na tabela */
-.lista tbody button {
-    border-radius: 20px;
-    width: 65px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.lista table th {
+    background-color: rgb(0, 195, 255);
+    color: white;
+    font-size: 16px;
+}
+
+.lista table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.lista table tbody tr:hover {
+    background-color: #e0f7fa;
+}
+
+/* Botão de exclusão */
+.btn-delete {
     background-color: red;
     color: white;
-    font-size: 14px;
-    cursor: pointer;
     border: none;
-    transition: background-color 0.3s ease;
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
 }
 
-.lista tbody button:hover {
+.btn-delete:hover {
     background-color: darkred;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    font-size: 14px;
+    margin-top: 107px;
+}
+
+/* Estilo para garantir que o formulário e a tabela fiquem centralizados de forma adequada */
+@media screen and (max-width: 768px) {
+    .formulario,
+    .lista {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .btn-submit {
+        width: 100%;
+    }
+
+    .lista table {
+        width: 100%;
+    }
 }
