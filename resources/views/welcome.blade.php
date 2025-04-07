@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}?v={{ time() }}">
     <title>Cadastro de Produtos</title>
-    <!-- Incluindo o CSS do Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
     <header>
         <h1>Cadastro de Produtos</h1>
     </header>
-
     <main>
         <section class="formulario">
             <h2>Adicionar Novo Produto</h2>
@@ -57,7 +53,7 @@
                             <td>{{ $produto->created_at->format('d/m/Y H:i') }}</td>
                             <td>{{ $produto->updated_at->format('d/m/Y H:i') }}</td>
                             <!-- Button delete -->
-                            <td>
+                            <td class="teste">
                                 <form action="/produto/{{ $produto->id }}" method="POST" class="form-delete">
                                     @csrf
                                     @method('DELETE')
