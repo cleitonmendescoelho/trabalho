@@ -17,15 +17,14 @@
     <main>
         <section class="formulario">
             <h2>Adicionar Novo Produto</h2>
-            <form action="/cadastro_prod" method="POST">
-                @csrf
+            <form action="/" method="">
                 <div class="form-group">
                     <label for="nome">Nome do Produto</label>
-                    <input type="text" name="nome" id="nome" placeholder="Nome do Produto" required>
+                    <input type="text" name="" placeholder="Nome do Produto" required>
                 </div>
                 <div class="form-group">
                     <label for="category">Categoria</label>
-                    <select name="category" id="category" required>
+                    <select name=""  required>
                         <option value="Utensilios">Utensílios</option>
                         <option value="Roupas">Roupas</option>
                         <option value="Calçados">Calçados</option>
@@ -46,25 +45,7 @@
                         <th>Ações</th> 
                     </tr>
                 </thead>
-                <tbody>
-                    @foreach ($produtos as $produto)
-                        <tr>
-                            <td>{{ $produto->nome }}</td>
-                            <td>{{ $produto->category }}</td>
-                            <td>{{ $produto->created_at->format('d/m/Y H:i') }}</td>
-                            <!-- Button delete -->
-                            <td>
-                                <form action="/produto/{{ $produto->id }}" method="POST" class="form-delete">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn-delete" aria-label="Excluir produto {{ $produto->nome }}">Excluir</button>
-                                </form>
-                            </td>
-                            <!-- Button Edit -->
-                             
-                        </tr>
-                    @endforeach
-                </tbody>
+                <tbody></tbody>
             </table>
         </section>
     </main>
