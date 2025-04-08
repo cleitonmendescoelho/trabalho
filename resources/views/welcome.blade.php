@@ -12,11 +12,10 @@
 </head>
 
 <body>
-    <header>
-        <h1>Cadastro de Produtos</h1>
-    </header>
-
     <main>
+        <header>
+            <h1>Cadastro de Produtos</h1>
+        </header>
         <section class="formulario">
             <h2>Adicionar Novo Produto</h2>
             <form action="/cadastro_prod" method="POST">
@@ -51,59 +50,59 @@
                 </thead>
                 <tbody>
                     @foreach ($produtos as $produto)
-                        <tr>
-                            <td>{{ $produto->nome }}</td>
-                            <td>{{ $produto->category }}</td>
-                            <td>{{ $produto->created_at->format('d/m/Y H:i') }}</td>
-                            <td>{{ $produto->updated_at->format('d/m/Y H:i') }}</td>
-                            <!-- Button delete -->
-                            <td>
-                                <form action="/produto/{{ $produto->id }}" method="POST" class="form-delete">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn-delete" aria-label="Excluir produto {{ $produto->nome }}">Excluir</button>
-                                </form>
-                                <!-- Button Edit -->
-                                <button type="button" class="btn-edit" data-bs-toggle="modal" data-bs-target="#editModal{{ $produto->id }}">
-                                    Editar
-                                </button>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td>{{ $produto->nome }}</td>
+                        <td>{{ $produto->category }}</td>
+                        <td>{{ $produto->created_at->format('d/m/Y H:i') }}</td>
+                        <td>{{ $produto->updated_at->format('d/m/Y H:i') }}</td>
+                        <!-- Button delete -->
+                        <td>
+                            <form action="/produto/{{ $produto->id }}" method="POST" class="form-delete">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn-delete" aria-label="Excluir produto {{ $produto->nome }}">Excluir</button>
+                            </form>
+                            <!-- Button Edit -->
+                            <button type="button" class="btn-edit" data-bs-toggle="modal" data-bs-target="#editModal{{ $produto->id }}">
+                                Editar
+                            </button>
+                        </td>
+                    </tr>
 
-                        <!-- Modal for Editing -->
-                        <div class="modal fade" id="editModal{{ $produto->id }}" tabindex="-1" aria-labelledby="editModalLabel{{ $produto->id }}" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="editModalLabel{{ $produto->id }}">Editar Produto</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form action="/produto/{{ $produto->id }}" method="POST">
-                                            @csrf
-                                            @method('PUT')
-                                            <div class="form-group">
-                                                <label for="nome">Nome do Produto</label>
-                                                <input type="text" name="nome" id="nome" value="{{ $produto->nome }}" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="category">Categoria</label>
-                                                <select name="category" id="category" required>
-                                                    <option value="Utensilios" {{ $produto->category == 'Utensilios' ? 'selected' : '' }}>Utensílios</option>
-                                                    <option value="Roupas" {{ $produto->category == 'Roupas' ? 'selected' : '' }}>Roupas</option>
-                                                    <option value="Calçados" {{ $produto->category == 'Calçados' ? 'selected' : '' }}>Calçados</option>
-                                                    <option value="Lar" {{ $produto->category == 'Lar' ? 'selected' : '' }}>Lar</option>
-                                                </select>
-                                            </div>
-                                            <button type="submit" class="btn-submit">Salvar Alterações</button>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                                    </div>
+                    <!-- Modal for Editing -->
+                    <div class="modal fade" id="editModal{{ $produto->id }}" tabindex="-1" aria-labelledby="editModalLabel{{ $produto->id }}" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="editModalLabel{{ $produto->id }}">Editar Produto</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="/produto/{{ $produto->id }}" method="POST">
+                                        @csrf
+                                        @method('PUT')
+                                        <div class="form-group">
+                                            <label for="nome">Nome do Produto</label>
+                                            <input type="text" name="nome" id="nome" value="{{ $produto->nome }}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="category">Categoria</label>
+                                            <select name="category" id="category" required>
+                                                <option value="Utensilios" {{ $produto->category == 'Utensilios' ? 'selected' : '' }}>Utensílios</option>
+                                                <option value="Roupas" {{ $produto->category == 'Roupas' ? 'selected' : '' }}>Roupas</option>
+                                                <option value="Calçados" {{ $produto->category == 'Calçados' ? 'selected' : '' }}>Calçados</option>
+                                                <option value="Lar" {{ $produto->category == 'Lar' ? 'selected' : '' }}>Lar</option>
+                                            </select>
+                                        </div>
+                                        <button type="submit" class="btn-submit">Salvar Alterações</button>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                                 </div>
                             </div>
                         </div>
+                    </div>
                     @endforeach
                 </tbody>
             </table>
