@@ -136,6 +136,19 @@ main .formulario .btn-submit {
     background-color: darkred;
 }
 
+.btn-edit{
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.btn-edit:hover{
+    color:rgba(0, 0, 255, 0.418);
+}
+
 footer {
     text-align: center;
     padding: 15px;
