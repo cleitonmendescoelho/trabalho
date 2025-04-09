@@ -32,7 +32,7 @@ main .formulario h2 {
     margin-bottom: 20px;
 }
 
-main .formulario .form-group {
+main .form-group {
     width: 100%;
     margin-bottom: 15px;
 }
@@ -45,7 +45,7 @@ main .form-group label {
 }
 
 main .form-group input,
-.form-group select {
+main .form-group select {
     width: 500px;
     padding: 10px;
     border: 2px solid #ccc;
@@ -55,12 +55,12 @@ main .form-group input,
 }
 
 main .form-group input:focus,
-.form-group select:focus {
+main .form-group select:focus {
     border-color: #007BFF;
     outline: none;
 }
 
-main .formulario .btn-submit {
+main .btn-submit {
     width: 200px;
     height: 45px;
     background-color: green;
@@ -73,12 +73,11 @@ main .formulario .btn-submit {
     margin-top: 20px;
 }
 
-.btn-submit:hover {
+main .btn-submit:hover {
     background-color: darkgreen;
 }
 
-/* Estilos da lista de produtos */
-.lista {
+main .lista {
     margin-top: 40px;
     width: 80%;
     max-width: 800px;
@@ -87,42 +86,40 @@ main .formulario .btn-submit {
     /* background-color: #f9f9f9; */
 }
 
-.lista h2 {
+main .lista h2 {
     font-size: 20px;
     text-align: center;
     margin-bottom: 15px;
 }
 
-/* Estilo da tabela */
-.lista table {
+main .lista table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
-.lista table th,
-.lista table td {
+main .lista table th,
+main .lista table td {
     padding: 12px;
     border: 1px solid #ddd;
     text-align: left;
 }
 
-.lista table th {
+main .lista table th {
     background-color: rgb(0, 195, 255);
     color: white;
     font-size: 16px;
 }
 
-.lista table tbody tr:nth-child(even) {
+main .lista table tbody tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-.lista table tbody tr:hover {
+main .lista table tbody tr:hover {
     background-color: #e0f7fa;
 }
 
-/* Botão de exclusão */
-.btn-delete {
+main tbody td .btn-delete {
     background-color: red;
     color: white;
     border: none;
@@ -132,11 +129,11 @@ main .formulario .btn-submit {
     font-size: 14px;
 }
 
-.btn-delete:hover {
+main tbody td .btn-delete:hover {
     background-color: darkred;
 }
 
-.btn-edit{
+main tbody td .btn-edit{
     background-color: blue;
     color: white;
     border: none;
@@ -145,9 +142,16 @@ main .formulario .btn-submit {
     cursor: pointer;
     font-size: 14px;
 }
-.btn-edit:hover{
+main tbody td .btn-edit:hover{
     color:rgba(0, 0, 255, 0.418);
 }
+
+
+
+/* CSS Modal */
+
+
+
 
 footer {
     text-align: center;
